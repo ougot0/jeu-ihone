@@ -1,0 +1,151 @@
+# Build iOS dans le cloud, sans Mac personnel.
+#  1) Runner Linux + image Docker GameCI : Unity génère le PROJET XCODE (export iOS).
+#  2) Runner macOS GitHub : xcodebuild compile, signe et exporte l'IPA ; envoi TestFlight optionnel.
+# Déclenchement manuel uniquement (onglet Actions > iOS Build > Run workflow).
+# Secrets requis : voir docs/06-build-ios-cloud.md. Aucun certificat n'est stocké dans le dépôt.
+name: iOS Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      upload_testflight:
+        description: "Envoyer l'IPA sur TestFlight"
+        type: boolean
+        default: false
+
+env:
+  IOS_BUNDLE_ID: ${{ vars.IOS_BUNDLE_ID }}
+  APPLE_TEAM_ID: ${{ vars.APPLE_TEAM_ID }}
+  IOS_PROFILE_UUID: ${{ vars.IOS_PROFILE_UUID }}
+
+jobs:
+  unity-xcode-export:
+    name: Unity -> projet Xcode
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Libérer de l'espace disque (image Unity iOS volumineuse)
+        uses: jlumbroso/free-disk-space@v1.3.1
+        with:
+          tool-cache: false
+          android: true
+          dotnet: false
+          haskell: true
+          large-packages: false
+          docker-images: false
+          swap-storage: true
+
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - uses: actions/cache@v4
+        with:
+          path: Game/Library
+          key: Library-iOS-${{ hashFiles('Game/Packages/manifest.json', 'Game/ProjectSettings/ProjectVersion.txt') }}
+          restore-keys: Library-iOS-
+
+      - name: Build Unity (iOS)
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: Game
+          targetPlatform: iOS
+          buildMethod: Arsenal.EditorTools.BuildScript.BuildiOS
+          buildsPath: build
+          buildName: xcode
+
+      # Archive tar : conserve les permissions d'exécution des scripts du projet Xcode.
+      - name: Empaqueter le projet Xcode
+        run: sudo tar -czf xcode-project.tgz -C build/iOS/xcode .
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xcode-project
+          path: xcode-project.tgz
+          retention-days: 3
+
+  xcode-archive:
+    name: Xcode -> IPA signée
+    needs: unity-xcode-export
+    runs-on: macos-15
+    timeout-minutes: 60
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: xcode-project
+
+      - name: Décompresser
+        run: mkdir xcode && tar -xzf xcode-project.tgz -C xcode
+
+      - name: Installer certificat et profil dans un trousseau temporaire
+        env:
+          IOS_P12_BASE64: ${{ secrets.IOS_P12_BASE64 }}
+          IOS_P12_PASSWORD: ${{ secrets.IOS_P12_PASSWORD }}
+          IOS_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          set -euo pipefail
+          KEYCHAIN="$RUNNER_TEMP/build.keychain-db"
+          KEYCHAIN_PASSWORD="$(openssl rand -base64 24)"
+          echo "$IOS_P12_BASE64" | base64 --decode > "$RUNNER_TEMP/cert.p12"
+          echo "$IOS_PROFILE_BASE64" | base64 --decode > "$RUNNER_TEMP/profile.mobileprovision"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security set-keychain-settings -lut 3600 "$KEYCHAIN"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security import "$RUNNER_TEMP/cert.p12" -P "$IOS_P12_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN"
+          security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security list-keychains -d user -s "$KEYCHAIN" $(security list-keychains -d user | tr -d '"')
+          mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles"
+          cp "$RUNNER_TEMP/profile.mobileprovision" "$HOME/Library/MobileDevice/Provisioning Profiles/$IOS_PROFILE_UUID.mobileprovision"
+          rm "$RUNNER_TEMP/cert.p12"
+
+      - name: Archiver
+        run: |
+          set -euo pipefail
+          cd xcode
+          xcodebuild -project Unity-iPhone.xcodeproj -scheme Unity-iPhone -configuration Release \
+            -sdk iphoneos -archivePath "$RUNNER_TEMP/Arsenal.xcarchive" archive \
+            CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM="$APPLE_TEAM_ID" | tail -n 80
+
+      - name: Exporter l'IPA
+        run: |
+          set -euo pipefail
+          cat > "$RUNNER_TEMP/ExportOptions.plist" <<PLIST
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0"><dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>teamID</key><string>${APPLE_TEAM_ID}</string>
+            <key>signingStyle</key><string>manual</string>
+            <key>provisioningProfiles</key><dict><key>${IOS_BUNDLE_ID}</key><string>${IOS_PROFILE_UUID}</string></dict>
+            <key>uploadSymbols</key><true/>
+          </dict></plist>
+          PLIST
+          xcodebuild -exportArchive -archivePath "$RUNNER_TEMP/Arsenal.xcarchive" \
+            -exportOptionsPlist "$RUNNER_TEMP/ExportOptions.plist" -exportPath "$RUNNER_TEMP/ipa"
+          ls -la "$RUNNER_TEMP/ipa"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: arsenal-ipa
+          path: ${{ runner.temp }}/ipa/*.ipa
+          retention-days: 7
+
+      - name: Envoi TestFlight (optionnel)
+        if: ${{ inputs.upload_testflight }}
+        env:
+          ASC_KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.APPSTORE_API_ISSUER_ID }}
+          ASC_KEY_P8_BASE64: ${{ secrets.APPSTORE_API_PRIVATE_KEY_BASE64 }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.appstoreconnect/private_keys"
+          echo "$ASC_KEY_P8_BASE64" | base64 --decode > "$HOME/.appstoreconnect/private_keys/AuthKey_${ASC_KEY_ID}.p8"
+          xcrun altool --upload-app -f "$RUNNER_TEMP"/ipa/*.ipa -t ios --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"
+
+      - name: Nettoyage du trousseau
+        if: always()
+        run: security delete-keychain "$RUNNER_TEMP/build.keychain-db" || true

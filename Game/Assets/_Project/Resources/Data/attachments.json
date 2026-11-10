@@ -1,0 +1,3191 @@
+{
+ "attachments": [
+  {
+   "id": "optic_mini_dot",
+   "displayName": "Point rouge MD-1",
+   "type": "optic",
+   "description": "Viseur point rouge ultra-compact pour plaque de pistolet ou rail.",
+   "price": 400,
+   "unlockLevel": 1,
+   "mounts": [
+    "plaque-p",
+    "plaque-r",
+    "rail-t"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [
+    "rear_sight"
+   ],
+   "modifiers": [
+    {
+     "stat": "accuracy",
+     "add": 6,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -2,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.008,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.022,
+      "y": 0.014,
+      "z": 0.032
+     }
+    },
+    {
+     "name": "hood_l",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": -0.0095,
+      "y": 0.022,
+      "z": 0.004
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.003,
+      "y": 0.016,
+      "z": 0.022
+     }
+    },
+    {
+     "name": "hood_r",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0.0095,
+      "y": 0.022,
+      "z": 0.004
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.003,
+      "y": 0.016,
+      "z": 0.022
+     }
+    },
+    {
+     "name": "hood_top",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.0305,
+      "z": 0.004
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.022,
+      "y": 0.003,
+      "z": 0.022
+     }
+    },
+    {
+     "name": "lens",
+     "shape": "box",
+     "material": "glass",
+     "position": {
+      "x": 0,
+      "y": 0.022,
+      "z": 0.012
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.016,
+      "y": 0.014,
+      "z": 0.002
+     }
+    },
+    {
+     "name": "dot",
+     "shape": "sphere",
+     "material": "emissive",
+     "position": {
+      "x": 0,
+      "y": 0.022,
+      "z": 0.0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.002,
+      "y": 0.002,
+      "z": 0.002
+     }
+    }
+   ]
+  },
+  {
+   "id": "optic_reflex_r1",
+   "displayName": "Reflex R1",
+   "type": "optic",
+   "description": "Viseur tubulaire à point lumineux, acquisition rapide.",
+   "price": 900,
+   "unlockLevel": 2,
+   "mounts": [
+    "rail-t"
+   ],
+   "families": [
+    "smg",
+    "rifle",
+    "shotgun"
+   ],
+   "conflicts": [],
+   "hidesParts": [
+    "rear_sight"
+   ],
+   "modifiers": [
+    {
+     "stat": "accuracy",
+     "add": 8,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -3,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "base",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.008,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.026,
+      "y": 0.016,
+      "z": 0.05
+     }
+    },
+    {
+     "name": "tube",
+     "shape": "cylinder",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.032,
+      "z": 0
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.036,
+      "y": 0.025,
+      "z": 0.036
+     }
+    },
+    {
+     "name": "lens",
+     "shape": "cylinder",
+     "material": "glass",
+     "position": {
+      "x": 0,
+      "y": 0.032,
+      "z": 0.0
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.026,
+      "z": 0.03
+     }
+    },
+    {
+     "name": "dot",
+     "shape": "sphere",
+     "material": "emissive",
+     "position": {
+      "x": 0,
+      "y": 0.032,
+      "z": -0.026
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.003,
+      "y": 0.003,
+      "z": 0.003
+     }
+    }
+   ]
+  },
+  {
+   "id": "optic_holo_h2",
+   "displayName": "Holographique H2",
+   "type": "optic",
+   "description": "Fenêtre large et réticule holographique fictif.",
+   "price": 1400,
+   "unlockLevel": 3,
+   "mounts": [
+    "rail-t"
+   ],
+   "families": [
+    "smg",
+    "rifle",
+    "shotgun"
+   ],
+   "conflicts": [],
+   "hidesParts": [
+    "rear_sight"
+   ],
+   "modifiers": [
+    {
+     "stat": "accuracy",
+     "add": 10,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -4,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "base",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.01,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.034,
+      "y": 0.02,
+      "z": 0.07
+     }
+    },
+    {
+     "name": "post_l",
+     "shape": "box",
+     "material": "body",
+     "position": {
+      "x": -0.017,
+      "y": 0.036,
+      "z": 0.012
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.004,
+      "y": 0.032,
+      "z": 0.046
+     }
+    },
+    {
+     "name": "post_r",
+     "shape": "box",
+     "material": "body",
+     "position": {
+      "x": 0.017,
+      "y": 0.036,
+      "z": 0.012
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.004,
+      "y": 0.032,
+      "z": 0.046
+     }
+    },
+    {
+     "name": "roof",
+     "shape": "box",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.053,
+      "z": 0.012
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.038,
+      "y": 0.004,
+      "z": 0.046
+     }
+    },
+    {
+     "name": "window",
+     "shape": "box",
+     "material": "glass",
+     "position": {
+      "x": 0,
+      "y": 0.036,
+      "z": 0.03
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.028,
+      "z": 0.002
+     }
+    },
+    {
+     "name": "buttons",
+     "shape": "box",
+     "material": "rubber",
+     "position": {
+      "x": 0.012,
+      "y": 0.016,
+      "z": -0.03
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.008,
+      "y": 0.006,
+      "z": 0.012
+     }
+    }
+   ]
+  },
+  {
+   "id": "optic_scope_4x",
+   "displayName": "Lunette ML-4x",
+   "type": "optic",
+   "description": "Lunette grossissante fictive.",
+   "price": 2200,
+   "unlockLevel": 4,
+   "mounts": [
+    "rail-t"
+   ],
+   "families": [
+    "smg",
+    "rifle",
+    "sniper",
+    "shotgun"
+   ],
+   "conflicts": [],
+   "hidesParts": [
+    "rear_sight",
+    "front_sight"
+   ],
+   "modifiers": [
+    {
+     "stat": "accuracy",
+     "add": 16,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -10,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "ring_front",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.014,
+      "z": 0.035
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.022,
+      "y": 0.028,
+      "z": 0.012
+     }
+    },
+    {
+     "name": "ring_rear",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.014,
+      "z": -0.035
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.022,
+      "y": 0.028,
+      "z": 0.012
+     }
+    },
+    {
+     "name": "tube",
+     "shape": "cylinder",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.038,
+      "z": 0
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.07,
+      "z": 0.03
+     }
+    },
+    {
+     "name": "objective",
+     "shape": "cylinder",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.038,
+      "z": 0.09
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.044,
+      "y": 0.025,
+      "z": 0.044
+     }
+    },
+    {
+     "name": "eyepiece",
+     "shape": "cylinder",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.038,
+      "z": -0.085
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.038,
+      "y": 0.02,
+      "z": 0.038
+     }
+    },
+    {
+     "name": "turret_top",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.058,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.02,
+      "y": 0.009,
+      "z": 0.02
+     }
+    },
+    {
+     "name": "turret_side",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": 0.02,
+      "y": 0.038,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 90
+     },
+     "scale": {
+      "x": 0.02,
+      "y": 0.009,
+      "z": 0.02
+     }
+    },
+    {
+     "name": "lens",
+     "shape": "cylinder",
+     "material": "glass",
+     "position": {
+      "x": 0,
+      "y": 0.038,
+      "z": 0.116
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.0374,
+      "y": 0.001,
+      "z": 0.0374
+     }
+    }
+   ]
+  },
+  {
+   "id": "optic_scope_8x",
+   "displayName": "Lunette LR-8x",
+   "type": "optic",
+   "description": "Lunette grossissante fictive.",
+   "price": 3500,
+   "unlockLevel": 6,
+   "mounts": [
+    "rail-t"
+   ],
+   "families": [
+    "rifle",
+    "sniper"
+   ],
+   "conflicts": [],
+   "hidesParts": [
+    "rear_sight",
+    "front_sight"
+   ],
+   "modifiers": [
+    {
+     "stat": "accuracy",
+     "add": 24,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -16,
+     "mul": 1.0
+    },
+    {
+     "stat": "recoil",
+     "add": -2,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "ring_front",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.014,
+      "z": 0.035
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.022,
+      "y": 0.028,
+      "z": 0.012
+     }
+    },
+    {
+     "name": "ring_rear",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.014,
+      "z": -0.035
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.022,
+      "y": 0.028,
+      "z": 0.012
+     }
+    },
+    {
+     "name": "tube",
+     "shape": "cylinder",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.038,
+      "z": 0
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.11,
+      "z": 0.03
+     }
+    },
+    {
+     "name": "objective",
+     "shape": "cylinder",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.038,
+      "z": 0.13
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.056,
+      "y": 0.025,
+      "z": 0.056
+     }
+    },
+    {
+     "name": "eyepiece",
+     "shape": "cylinder",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.038,
+      "z": -0.125
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.038,
+      "y": 0.02,
+      "z": 0.038
+     }
+    },
+    {
+     "name": "turret_top",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.058,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.02,
+      "y": 0.009,
+      "z": 0.02
+     }
+    },
+    {
+     "name": "turret_side",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": 0.02,
+      "y": 0.038,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 90
+     },
+     "scale": {
+      "x": 0.02,
+      "y": 0.009,
+      "z": 0.02
+     }
+    },
+    {
+     "name": "lens",
+     "shape": "cylinder",
+     "material": "glass",
+     "position": {
+      "x": 0,
+      "y": 0.038,
+      "z": 0.156
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.0476,
+      "y": 0.001,
+      "z": 0.0476
+     }
+    }
+   ]
+  },
+  {
+   "id": "muzzle_std_r",
+   "displayName": "Cache-flamme standard",
+   "type": "muzzle",
+   "description": "Cache-flamme d'origine.",
+   "price": 0,
+   "unlockLevel": 1,
+   "mounts": [
+    "filetage-r"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0.03
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.022,
+      "y": 0.03,
+      "z": 0.022
+     }
+    },
+    {
+     "name": "slot_0",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": 0.0,
+      "z": 0.035
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.023,
+      "y": 0.004,
+      "z": 0.03
+     }
+    },
+    {
+     "name": "slot_1",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": 0.0,
+      "z": 0.035
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 60
+     },
+     "scale": {
+      "x": 0.023,
+      "y": 0.004,
+      "z": 0.03
+     }
+    },
+    {
+     "name": "slot_2",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": 0.0,
+      "z": 0.035
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 120
+     },
+     "scale": {
+      "x": 0.023,
+      "y": 0.004,
+      "z": 0.03
+     }
+    }
+   ]
+  },
+  {
+   "id": "muzzle_comp_c1",
+   "displayName": "Compensateur C1",
+   "type": "muzzle",
+   "description": "Réduit la remontée de l'arme (effet de jeu).",
+   "price": 700,
+   "unlockLevel": 2,
+   "mounts": [
+    "filetage-r",
+    "filetage-s",
+    "filetage-l"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "recoil",
+     "add": -10,
+     "mul": 1.0
+    },
+    {
+     "stat": "accuracy",
+     "add": -2,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0.03
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.027,
+      "y": 0.03,
+      "z": 0.027
+     }
+    },
+    {
+     "name": "port_1",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": 0.013,
+      "z": 0.02
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.014,
+      "y": 0.003,
+      "z": 0.007
+     }
+    },
+    {
+     "name": "port_2",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": 0.013,
+      "z": 0.04
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.014,
+      "y": 0.003,
+      "z": 0.007
+     }
+    }
+   ]
+  },
+  {
+   "id": "muzzle_supp_s3",
+   "displayName": "Modérateur S3",
+   "type": "muzzle",
+   "description": "Atténue le bruit et la signature du tir dans le jeu.",
+   "price": 2000,
+   "unlockLevel": 3,
+   "mounts": [
+    "filetage-r",
+    "filetage-s",
+    "filetage-l"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "recoil",
+     "add": -6,
+     "mul": 1.0
+    },
+    {
+     "stat": "accuracy",
+     "add": 4,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -8,
+     "mul": 1.0
+    },
+    {
+     "stat": "damage",
+     "add": 0,
+     "mul": 0.95
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "cap_rear",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0.005
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.005,
+      "z": 0.03
+     }
+    },
+    {
+     "name": "body",
+     "shape": "cylinder",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0.09
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.036,
+      "y": 0.08,
+      "z": 0.036
+     }
+    },
+    {
+     "name": "cap_front",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0.172
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.034,
+      "y": 0.004,
+      "z": 0.034
+     }
+    }
+   ]
+  },
+  {
+   "id": "muzzle_brake_b2",
+   "displayName": "Frein de bouche B2",
+   "type": "muzzle",
+   "description": "Gros réducteur de recul pour plateformes longues.",
+   "price": 1200,
+   "unlockLevel": 4,
+   "mounts": [
+    "filetage-r",
+    "filetage-l"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "recoil",
+     "add": -16,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -3,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0.03
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.04,
+      "y": 0.026,
+      "z": 0.06
+     }
+    },
+    {
+     "name": "baffle_1",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0.018
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.042,
+      "y": 0.018,
+      "z": 0.006
+     }
+    },
+    {
+     "name": "baffle_2",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0.04
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.042,
+      "y": 0.018,
+      "z": 0.006
+     }
+    }
+   ]
+  },
+  {
+   "id": "muzzle_choke_x",
+   "displayName": "Choke serré X",
+   "type": "muzzle",
+   "description": "Resserre la gerbe de plombs virtuels.",
+   "price": 600,
+   "unlockLevel": 5,
+   "mounts": [
+    "choke-12"
+   ],
+   "families": [
+    "shotgun"
+   ],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "accuracy",
+     "add": 12,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -1,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0.02
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.02,
+      "z": 0.03
+     }
+    },
+    {
+     "name": "ring",
+     "shape": "cylinder",
+     "material": "accent",
+     "position": {
+      "x": 0,
+      "y": 0,
+      "z": 0.03
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.032,
+      "y": 0.003,
+      "z": 0.032
+     }
+    }
+   ]
+  },
+  {
+   "id": "grip_vertical",
+   "displayName": "Poignée verticale V1",
+   "type": "grip",
+   "description": "Stabilise le tir soutenu.",
+   "price": 600,
+   "unlockLevel": 2,
+   "mounts": [
+    "rail-t"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "recoil",
+     "add": -8,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -2,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "clamp",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.006,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.024,
+      "y": 0.012,
+      "z": 0.04
+     }
+    },
+    {
+     "name": "handle",
+     "shape": "cylinder",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.05,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.04,
+      "z": 0.03
+     }
+    },
+    {
+     "name": "cap",
+     "shape": "cylinder",
+     "material": "rubber",
+     "position": {
+      "x": 0,
+      "y": -0.091,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.032,
+      "y": 0.002,
+      "z": 0.032
+     }
+    }
+   ]
+  },
+  {
+   "id": "grip_angled",
+   "displayName": "Poignée inclinée A2",
+   "type": "grip",
+   "description": "Améliore la prise en main et la vitesse de visée.",
+   "price": 800,
+   "unlockLevel": 3,
+   "mounts": [
+    "rail-t"
+   ],
+   "families": [],
+   "conflicts": [
+    "light_l2"
+   ],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "recoil",
+     "add": -4,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": 4,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "clamp",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.006,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.024,
+      "y": 0.012,
+      "z": 0.07
+     }
+    },
+    {
+     "name": "ramp",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.022,
+      "z": 0.0
+     },
+     "rotation": {
+      "x": -20,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.026,
+      "y": 0.03,
+      "z": 0.07
+     }
+    }
+   ]
+  },
+  {
+   "id": "grip_bipod",
+   "displayName": "Bipied BP-1",
+   "type": "grip",
+   "description": "Bipied replié ; stabilité maximale en position.",
+   "price": 1500,
+   "unlockLevel": 6,
+   "mounts": [
+    "rail-t"
+   ],
+   "families": [
+    "rifle",
+    "sniper"
+   ],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "accuracy",
+     "add": 10,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -12,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "clamp",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.008,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.016,
+      "z": 0.04
+     }
+    },
+    {
+     "name": "leg_l",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": -0.012,
+      "y": -0.02,
+      "z": 0.08
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.01,
+      "y": 0.08,
+      "z": 0.01
+     }
+    },
+    {
+     "name": "leg_r",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": 0.012,
+      "y": -0.02,
+      "z": 0.08
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.01,
+      "y": 0.08,
+      "z": 0.01
+     }
+    },
+    {
+     "name": "foot_l",
+     "shape": "sphere",
+     "material": "rubber",
+     "position": {
+      "x": -0.012,
+      "y": -0.02,
+      "z": 0.16
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.014,
+      "y": 0.014,
+      "z": 0.014
+     }
+    },
+    {
+     "name": "foot_r",
+     "shape": "sphere",
+     "material": "rubber",
+     "position": {
+      "x": 0.012,
+      "y": -0.02,
+      "z": 0.16
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.014,
+      "y": 0.014,
+      "z": 0.014
+     }
+    }
+   ]
+  },
+  {
+   "id": "grip_rev_wood",
+   "displayName": "Plaquettes bois",
+   "type": "grip",
+   "description": "Plaquettes d'origine en bois verni.",
+   "price": 0,
+   "unlockLevel": 1,
+   "mounts": [
+    "crosse-r"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "grip",
+     "shape": "box",
+     "material": "wood",
+     "position": {
+      "x": 0,
+      "y": 0.0,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.034,
+      "y": 0.085,
+      "z": 0.042
+     }
+    },
+    {
+     "name": "medallion",
+     "shape": "box",
+     "material": "accent",
+     "position": {
+      "x": 0.0172,
+      "y": 0.01,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.001,
+      "y": 0.012,
+      "z": 0.012
+     }
+    }
+   ]
+  },
+  {
+   "id": "grip_rev_rubber",
+   "displayName": "Poignée caoutchouc",
+   "type": "grip",
+   "description": "Absorbe le recul, meilleure tenue.",
+   "price": 500,
+   "unlockLevel": 2,
+   "mounts": [
+    "crosse-r"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "recoil",
+     "add": -8,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": 2,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "grip",
+     "shape": "box",
+     "material": "rubber",
+     "position": {
+      "x": 0,
+      "y": 0.0,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.036,
+      "y": 0.088,
+      "z": 0.044
+     }
+    },
+    {
+     "name": "groove_0",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": 0.02,
+      "z": 0.0225
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.034,
+      "y": 0.004,
+      "z": 0.002
+     }
+    },
+    {
+     "name": "groove_1",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": 0.0,
+      "z": 0.0225
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.034,
+      "y": 0.004,
+      "z": 0.002
+     }
+    },
+    {
+     "name": "groove_2",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.02,
+      "z": 0.0225
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.034,
+      "y": 0.004,
+      "z": 0.002
+     }
+    }
+   ]
+  },
+  {
+   "id": "stock_ar_std",
+   "displayName": "Crosse réglable standard",
+   "type": "stock",
+   "description": "Crosse d'origine à 6 positions (fictive).",
+   "price": 0,
+   "unlockLevel": 1,
+   "mounts": [
+    "tube-s"
+   ],
+   "families": [
+    "rifle"
+   ],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.005,
+      "z": -0.09
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.04,
+      "y": 0.07,
+      "z": 0.15
+     }
+    },
+    {
+     "name": "pad",
+     "shape": "box",
+     "material": "rubber",
+     "position": {
+      "x": 0,
+      "y": -0.005,
+      "z": -0.171
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.042,
+      "y": 0.08,
+      "z": 0.012
+     }
+    },
+    {
+     "name": "cheek",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": 0.032,
+      "z": -0.08
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.034,
+      "y": 0.012,
+      "z": 0.11
+     }
+    }
+   ]
+  },
+  {
+   "id": "stock_light",
+   "displayName": "Crosse squelette SK",
+   "type": "stock",
+   "description": "Ultra-légère : maniabilité contre stabilité.",
+   "price": 900,
+   "unlockLevel": 2,
+   "mounts": [
+    "tube-s"
+   ],
+   "families": [
+    "rifle",
+    "smg"
+   ],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "handling",
+     "add": 10,
+     "mul": 1.0
+    },
+    {
+     "stat": "recoil",
+     "add": 6,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "rail_top",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.02,
+      "z": -0.08
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.01,
+      "y": 0.01,
+      "z": 0.16
+     }
+    },
+    {
+     "name": "rail_low",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.025,
+      "z": -0.09
+     },
+     "rotation": {
+      "x": -12,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.01,
+      "y": 0.01,
+      "z": 0.15
+     }
+    },
+    {
+     "name": "pad",
+     "shape": "box",
+     "material": "rubber",
+     "position": {
+      "x": 0,
+      "y": -0.005,
+      "z": -0.165
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.075,
+      "z": 0.01
+     }
+    }
+   ]
+  },
+  {
+   "id": "stock_precision",
+   "displayName": "Crosse précision PR",
+   "type": "stock",
+   "description": "Crosse réglable lourde pour le tir de précision.",
+   "price": 1600,
+   "unlockLevel": 4,
+   "mounts": [
+    "tube-s",
+    "chassis-l"
+   ],
+   "families": [
+    "rifle",
+    "sniper"
+   ],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "recoil",
+     "add": -10,
+     "mul": 1.0
+    },
+    {
+     "stat": "accuracy",
+     "add": 6,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -8,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.012,
+      "z": -0.13
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.045,
+      "y": 0.09,
+      "z": 0.24
+     }
+    },
+    {
+     "name": "riser",
+     "shape": "box",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.045,
+      "z": -0.12
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.04,
+      "y": 0.02,
+      "z": 0.14
+     }
+    },
+    {
+     "name": "pad",
+     "shape": "box",
+     "material": "rubber",
+     "position": {
+      "x": 0,
+      "y": -0.012,
+      "z": -0.255
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.047,
+      "y": 0.1,
+      "z": 0.014
+     }
+    }
+   ]
+  },
+  {
+   "id": "stock_smg_fold",
+   "displayName": "Crosse pliante K",
+   "type": "stock",
+   "description": "Crosse pliante d'origine.",
+   "price": 0,
+   "unlockLevel": 1,
+   "mounts": [
+    "tube-s"
+   ],
+   "families": [
+    "smg"
+   ],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "rod_l",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": -0.014,
+      "y": 0,
+      "z": -0.1
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.006,
+      "y": 0.006,
+      "z": 0.2
+     }
+    },
+    {
+     "name": "rod_r",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0.014,
+      "y": 0,
+      "z": -0.1
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.006,
+      "y": 0.006,
+      "z": 0.2
+     }
+    },
+    {
+     "name": "plate",
+     "shape": "box",
+     "material": "rubber",
+     "position": {
+      "x": 0,
+      "y": -0.01,
+      "z": -0.2
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.036,
+      "y": 0.06,
+      "z": 0.01
+     }
+    }
+   ]
+  },
+  {
+   "id": "stock_sniper_std",
+   "displayName": "Crosse fixe LR",
+   "type": "stock",
+   "description": "Crosse fixe d'origine.",
+   "price": 0,
+   "unlockLevel": 1,
+   "mounts": [
+    "chassis-l"
+   ],
+   "families": [
+    "sniper"
+   ],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": -0.02,
+      "z": -0.16
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.05,
+      "y": 0.1,
+      "z": 0.3
+     }
+    },
+    {
+     "name": "cheek",
+     "shape": "box",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.04,
+      "z": -0.15
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.044,
+      "y": 0.02,
+      "z": 0.16
+     }
+    },
+    {
+     "name": "pad",
+     "shape": "box",
+     "material": "rubber",
+     "position": {
+      "x": 0,
+      "y": -0.02,
+      "z": -0.316
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.052,
+      "y": 0.11,
+      "z": 0.012
+     }
+    },
+    {
+     "name": "hook",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.075,
+      "z": -0.25
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.02,
+      "z": 0.06
+     }
+    }
+   ]
+  },
+  {
+   "id": "stock_sg_std",
+   "displayName": "Crosse bois B12",
+   "type": "stock",
+   "description": "Crosse en bois d'origine.",
+   "price": 0,
+   "unlockLevel": 1,
+   "mounts": [
+    "crosse-12"
+   ],
+   "families": [
+    "shotgun"
+   ],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "wood",
+     "position": {
+      "x": 0,
+      "y": -0.03,
+      "z": -0.15
+     },
+     "rotation": {
+      "x": 8,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.044,
+      "y": 0.085,
+      "z": 0.3
+     }
+    },
+    {
+     "name": "pad",
+     "shape": "box",
+     "material": "rubber",
+     "position": {
+      "x": 0,
+      "y": -0.05,
+      "z": -0.302
+     },
+     "rotation": {
+      "x": 8,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.046,
+      "y": 0.095,
+      "z": 0.012
+     }
+    }
+   ]
+  },
+  {
+   "id": "stock_sg_synth",
+   "displayName": "Crosse synthétique B12-S",
+   "type": "stock",
+   "description": "Crosse synthétique avec talon amortissant.",
+   "price": 700,
+   "unlockLevel": 5,
+   "mounts": [
+    "crosse-12"
+   ],
+   "families": [
+    "shotgun"
+   ],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "recoil",
+     "add": -6,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": 2,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.03,
+      "z": -0.15
+     },
+     "rotation": {
+      "x": 8,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.044,
+      "y": 0.085,
+      "z": 0.3
+     }
+    },
+    {
+     "name": "pad",
+     "shape": "box",
+     "material": "rubber",
+     "position": {
+      "x": 0,
+      "y": -0.05,
+      "z": -0.305
+     },
+     "rotation": {
+      "x": 8,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.048,
+      "y": 0.1,
+      "z": 0.02
+     }
+    },
+    {
+     "name": "shell_holder",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0.023,
+      "y": -0.02,
+      "z": -0.12
+     },
+     "rotation": {
+      "x": 8,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.002,
+      "y": 0.03,
+      "z": 0.08
+     }
+    }
+   ]
+  },
+  {
+   "id": "mag_p9_std",
+   "displayName": "Chargeur P9 (15)",
+   "type": "magazine",
+   "description": "Chargeur standard.",
+   "price": 0,
+   "unlockLevel": 1,
+   "mounts": [
+    "mag-p9"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "baseplate",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.054,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.008,
+      "z": 0.044
+     }
+    }
+   ]
+  },
+  {
+   "id": "mag_p9_ext",
+   "displayName": "Chargeur P9 étendu (21)",
+   "type": "magazine",
+   "description": "Six cartouches virtuelles de plus.",
+   "price": 500,
+   "unlockLevel": 1,
+   "mounts": [
+    "mag-p9"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "magazineSize",
+     "add": 6,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -3,
+     "mul": 1.0
+    },
+    {
+     "stat": "reloadTime",
+     "add": 0.15,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.066,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.024,
+      "y": 0.026,
+      "z": 0.036
+     }
+    },
+    {
+     "name": "baseplate",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.082,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.008,
+      "z": 0.044
+     }
+    }
+   ]
+  },
+  {
+   "id": "mag_r_std",
+   "displayName": "Chargeur R30",
+   "type": "magazine",
+   "description": "Chargeur courbe standard.",
+   "price": 0,
+   "unlockLevel": 1,
+   "mounts": [
+    "mag-r30"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.06,
+      "z": 0.012
+     },
+     "rotation": {
+      "x": -12,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.028,
+      "y": 0.13,
+      "z": 0.062
+     }
+    },
+    {
+     "name": "baseplate",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.125,
+      "z": 0.026
+     },
+     "rotation": {
+      "x": -12,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.032,
+      "y": 0.01,
+      "z": 0.068
+     }
+    }
+   ]
+  },
+  {
+   "id": "mag_r_ext",
+   "displayName": "Chargeur R45",
+   "type": "magazine",
+   "description": "Grande capacité, plus encombrant.",
+   "price": 1100,
+   "unlockLevel": 4,
+   "mounts": [
+    "mag-r30"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "magazineSize",
+     "add": 15,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -6,
+     "mul": 1.0
+    },
+    {
+     "stat": "reloadTime",
+     "add": 0.35,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.085,
+      "z": 0.02
+     },
+     "rotation": {
+      "x": -16,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.028,
+      "y": 0.18,
+      "z": 0.062
+     }
+    },
+    {
+     "name": "baseplate",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.172,
+      "z": 0.045
+     },
+     "rotation": {
+      "x": -16,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.032,
+      "y": 0.01,
+      "z": 0.068
+     }
+    }
+   ]
+  },
+  {
+   "id": "mag_s_std",
+   "displayName": "Chargeur S30",
+   "type": "magazine",
+   "description": "Chargeur droit standard.",
+   "price": 0,
+   "unlockLevel": 1,
+   "mounts": [
+    "mag-s45"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.075,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.026,
+      "y": 0.15,
+      "z": 0.038
+     }
+    },
+    {
+     "name": "baseplate",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.152,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.008,
+      "z": 0.042
+     }
+    }
+   ]
+  },
+  {
+   "id": "mag_s_ext",
+   "displayName": "Chargeur S50",
+   "type": "magazine",
+   "description": "Capacité accrue.",
+   "price": 900,
+   "unlockLevel": 3,
+   "mounts": [
+    "mag-s45"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "magazineSize",
+     "add": 20,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -5,
+     "mul": 1.0
+    },
+    {
+     "stat": "reloadTime",
+     "add": 0.3,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.11,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.026,
+      "y": 0.22,
+      "z": 0.038
+     }
+    },
+    {
+     "name": "baseplate",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": -0.222,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.008,
+      "z": 0.042
+     }
+    }
+   ]
+  },
+  {
+   "id": "mag_l_std",
+   "displayName": "Chargeur L5",
+   "type": "magazine",
+   "description": "Chargeur 5 coups.",
+   "price": 0,
+   "unlockLevel": 1,
+   "mounts": [
+    "mag-l10"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.022,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.034,
+      "y": 0.045,
+      "z": 0.09
+     }
+    }
+   ]
+  },
+  {
+   "id": "mag_l_ext",
+   "displayName": "Chargeur L10",
+   "type": "magazine",
+   "description": "Chargeur 10 coups.",
+   "price": 1200,
+   "unlockLevel": 6,
+   "mounts": [
+    "mag-l10"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "magazineSize",
+     "add": 5,
+     "mul": 1.0
+    },
+    {
+     "stat": "handling",
+     "add": -4,
+     "mul": 1.0
+    },
+    {
+     "stat": "reloadTime",
+     "add": 0.3,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.045,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.034,
+      "y": 0.09,
+      "z": 0.09
+     }
+    }
+   ]
+  },
+  {
+   "id": "light_l1",
+   "displayName": "Lampe tactique L1",
+   "type": "light",
+   "description": "Lampe compacte (éclairage virtuel dans les missions).",
+   "price": 450,
+   "unlockLevel": 1,
+   "mounts": [
+    "rail-t",
+    "rail-c"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "handling",
+     "add": -1,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "clamp",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.005,
+      "z": 0.0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.02,
+      "y": 0.01,
+      "z": 0.03
+     }
+    },
+    {
+     "name": "body",
+     "shape": "cylinder",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.018,
+      "z": 0.012
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.022,
+      "y": 0.0275,
+      "z": 0.022
+     }
+    },
+    {
+     "name": "lens",
+     "shape": "cylinder",
+     "material": "lamp",
+     "position": {
+      "x": 0,
+      "y": 0.018,
+      "z": 0.04
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.018,
+      "y": 0.001,
+      "z": 0.018
+     }
+    }
+   ]
+  },
+  {
+   "id": "light_l2",
+   "displayName": "Lampe longue portée L2",
+   "type": "light",
+   "description": "Faisceau puissant et long.",
+   "price": 900,
+   "unlockLevel": 3,
+   "mounts": [
+    "rail-t"
+   ],
+   "families": [],
+   "conflicts": [
+    "grip_angled"
+   ],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "handling",
+     "add": -3,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "clamp",
+     "shape": "box",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": 0.005,
+      "z": 0.0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.022,
+      "y": 0.01,
+      "z": 0.04
+     }
+    },
+    {
+     "name": "body",
+     "shape": "cylinder",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.022,
+      "z": 0.02
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.026,
+      "y": 0.04,
+      "z": 0.026
+     }
+    },
+    {
+     "name": "head",
+     "shape": "cylinder",
+     "material": "body",
+     "position": {
+      "x": 0,
+      "y": 0.022,
+      "z": 0.065
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.034,
+      "y": 0.01,
+      "z": 0.034
+     }
+    },
+    {
+     "name": "lens",
+     "shape": "cylinder",
+     "material": "lamp",
+     "position": {
+      "x": 0,
+      "y": 0.022,
+      "z": 0.076
+     },
+     "rotation": {
+      "x": 90,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.03,
+      "y": 0.001,
+      "z": 0.03
+     }
+    }
+   ]
+  },
+  {
+   "id": "laser_v1",
+   "displayName": "Laser virtuel V1",
+   "type": "laser",
+   "description": "Pointeur laser simulé : améliore le tir sans visée.",
+   "price": 700,
+   "unlockLevel": 2,
+   "mounts": [
+    "rail-t",
+    "rail-c"
+   ],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [
+    {
+     "stat": "accuracy",
+     "add": 4,
+     "mul": 1.0
+    }
+   ],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "body",
+     "shape": "box",
+     "material": "polymer",
+     "position": {
+      "x": 0,
+      "y": 0.012,
+      "z": 0.012
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.02,
+      "y": 0.022,
+      "z": 0.04
+     }
+    },
+    {
+     "name": "aperture",
+     "shape": "sphere",
+     "material": "emissive",
+     "position": {
+      "x": 0,
+      "y": 0.012,
+      "z": 0.033
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.006,
+      "y": 0.006,
+      "z": 0.006
+     }
+    },
+    {
+     "name": "switch",
+     "shape": "box",
+     "material": "rubber",
+     "position": {
+      "x": 0,
+      "y": 0.012,
+      "z": -0.01
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.012,
+      "y": 0.012,
+      "z": 0.006
+     }
+    }
+   ]
+  },
+  {
+   "id": "charm_tag",
+   "displayName": "Plaque d'identité",
+   "type": "cosmetic",
+   "description": "Petite plaque métallique personnalisable.",
+   "price": 150,
+   "unlockLevel": 1,
+   "mounts": [],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "ring",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.005,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 90
+     },
+     "scale": {
+      "x": 0.012,
+      "y": 0.001,
+      "z": 0.012
+     }
+    },
+    {
+     "name": "plate",
+     "shape": "box",
+     "material": "accent",
+     "position": {
+      "x": 0,
+      "y": -0.03,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "scale": {
+      "x": 0.002,
+      "y": 0.03,
+      "z": 0.02
+     }
+    }
+   ]
+  },
+  {
+   "id": "charm_die",
+   "displayName": "Dé porte-bonheur",
+   "type": "cosmetic",
+   "description": "Un dé rouge pour les tireurs superstitieux.",
+   "price": 250,
+   "unlockLevel": 2,
+   "mounts": [],
+   "families": [],
+   "conflicts": [],
+   "hidesParts": [],
+   "modifiers": [],
+   "modelId": "",
+   "parts": [
+    {
+     "name": "ring",
+     "shape": "cylinder",
+     "material": "metal",
+     "position": {
+      "x": 0,
+      "y": -0.005,
+      "z": 0
+     },
+     "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 90
+     },
+     "scale": {
+      "x": 0.01,
+      "y": 0.001,
+      "z": 0.01
+     }
+    },
+    {
+     "name": "die",
+     "shape": "box",
+     "material": "emissive",
+     "position": {
+      "x": 0,
+      "y": -0.025,
+      "z": 0
+     },
+     "rotation": {
+      "x": 20,
+      "y": 30,
+      "z": 10
+     },
+     "scale": {
+      "x": 0.016,
+      "y": 0.016,
+      "z": 0.016
+     }
+    }
+   ]
+  }
+ ]
+}

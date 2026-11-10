@@ -1,0 +1,116 @@
+{
+ "finishes": [
+  {
+   "id": "finish_graphite",
+   "displayName": "Graphite",
+   "price": 0,
+   "unlockLevel": 1,
+   "color": {
+    "r": 0.085,
+    "g": 0.09,
+    "b": 0.095,
+    "a": 1.0
+   },
+   "metallic": 0.45,
+   "smoothness": 0.5
+  },
+  {
+   "id": "finish_desert",
+   "displayName": "Sable du désert",
+   "price": 400,
+   "unlockLevel": 1,
+   "color": {
+    "r": 0.55,
+    "g": 0.45,
+    "b": 0.32,
+    "a": 1.0
+   },
+   "metallic": 0.1,
+   "smoothness": 0.35
+  },
+  {
+   "id": "finish_olive",
+   "displayName": "Olive",
+   "price": 400,
+   "unlockLevel": 2,
+   "color": {
+    "r": 0.27,
+    "g": 0.3,
+    "b": 0.19,
+    "a": 1.0
+   },
+   "metallic": 0.1,
+   "smoothness": 0.35
+  },
+  {
+   "id": "finish_gunmetal",
+   "displayName": "Acier bruni",
+   "price": 800,
+   "unlockLevel": 2,
+   "color": {
+    "r": 0.3,
+    "g": 0.32,
+    "b": 0.35,
+    "a": 1.0
+   },
+   "metallic": 0.85,
+   "smoothness": 0.7
+  },
+  {
+   "id": "finish_arctic",
+   "displayName": "Arctique",
+   "price": 900,
+   "unlockLevel": 3,
+   "color": {
+    "r": 0.82,
+    "g": 0.84,
+    "b": 0.86,
+    "a": 1.0
+   },
+   "metallic": 0.1,
+   "smoothness": 0.4
+  },
+  {
+   "id": "finish_cobalt",
+   "displayName": "Cobalt",
+   "price": 1200,
+   "unlockLevel": 4,
+   "color": {
+    "r": 0.1,
+    "g": 0.2,
+    "b": 0.45,
+    "a": 1.0
+   },
+   "metallic": 0.75,
+   "smoothness": 0.65
+  },
+  {
+   "id": "finish_copper",
+   "displayName": "Cuivre poli",
+   "price": 1500,
+   "unlockLevel": 5,
+   "color": {
+    "r": 0.72,
+    "g": 0.42,
+    "b": 0.25,
+    "a": 1.0
+   },
+   "metallic": 1.0,
+   "smoothness": 0.78
+  },
+  {
+   "id": "finish_crimson",
+   "displayName": "Cramoisi",
+   "price": 1500,
+   "unlockLevel": 6,
+   "color": {
+    "r": 0.45,
+    "g": 0.05,
+    "b": 0.06,
+    "a": 1.0
+   },
+   "metallic": 0.6,
+   "smoothness": 0.65
+  }
+ ]
+}

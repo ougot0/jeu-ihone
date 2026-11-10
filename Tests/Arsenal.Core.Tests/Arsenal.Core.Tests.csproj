@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--
+    Tests du coeur logique (Assets/_Project/Scripts/Core), sans Unity.
+    Le code est compilé directement depuis le projet Unity : aucune duplication.
+    Lancer : dotnet test Tests/Arsenal.Core.Tests
+  -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <!-- Unity compile en C# 9 : on reste sur ce niveau pour détecter les incompatibilités. -->
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
+    <ImplicitUsings>disable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../Game/Assets/_Project/Scripts/Core/**/*.cs" LinkBase="Core" />
+    <None Include="../../Game/Assets/_Project/Resources/Data/*.json" LinkBase="Data" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+  </ItemGroup>
+</Project>

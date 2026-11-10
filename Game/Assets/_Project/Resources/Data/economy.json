@@ -1,0 +1,17 @@
+{
+ "startingMoney": 1500,
+ "startingWeapons": [
+  "vk9_sentinel"
+ ],
+ "startingAttachments": [
+  "charm_tag"
+ ],
+ "startingFinishes": [
+  "finish_graphite"
+ ],
+ "defaultFinish": "finish_graphite",
+ "xpBase": 400,
+ "xpGrowth": 1.35,
+ "maxLevel": 30,
+ "maxBuildsPerWeapon": 6
+}
