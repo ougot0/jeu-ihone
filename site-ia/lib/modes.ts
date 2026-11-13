@@ -41,6 +41,17 @@ Règles importantes :
 - Si on te pose une question hors sujet, réponds brièvement et ramène la conversation vers l'apprentissage.
 `;
 
+// Consignes ajoutées automatiquement quand on parle à l'IA avec la voix.
+export const VOICE_INSTRUCTIONS = `
+IMPORTANT : la conversation se fait à l'oral. Ta réponse sera lue à voix haute par une voix française.
+- Réponds en 1 à 4 phrases courtes et naturelles, comme si tu parlais à un ami.
+- Pas de Markdown, pas de listes, pas de titres, pas d'emojis, pas de tableaux.
+- N'utilise jamais l'écriture arabe : écris tous les mots étrangers en lettres latines, faciles à prononcer pour une voix française.
+- Pour un mot enseigné, dis le mot, comment il se prononce, ce qu'il veut dire, puis une petite phrase d'exemple.
+- En maths, dis les calculs avec des mots (« x au carré », « racine de deux », « trois quarts ») et donne seulement les étapes essentielles.
+- Termine souvent par une courte question pour continuer la conversation.
+`;
+
 export const MODES: Mode[] = [
   {
     id: "logique-maths",

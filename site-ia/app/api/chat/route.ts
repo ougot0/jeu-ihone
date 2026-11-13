@@ -4,7 +4,7 @@
 
 import { AIError, getAIProvider, type ChatMessage } from "@/lib/ai";
 import { MAX_HISTORY_MESSAGES, MAX_MESSAGE_CHARS, MAX_OUTPUT_TOKENS } from "@/lib/limits";
-import { getMode } from "@/lib/modes";
+import { getMode, VOICE_INSTRUCTIONS } from "@/lib/modes";
 import { checkRateLimit, getVisitorId } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
@@ -22,7 +22,11 @@ export async function POST(request: Request) {
   } catch {
     return errorResponse("Requête invalide.", 400);
   }
-  const { modeId, messages } = (body ?? {}) as { modeId?: unknown; messages?: unknown };
+  const { modeId, messages, voice } = (body ?? {}) as {
+    modeId?: unknown;
+    messages?: unknown;
+    voice?: unknown;
+  };
 
   const mode = typeof modeId === "string" ? getMode(modeId) : undefined;
   if (!mode) return errorResponse("Mode inconnu.", 400);
@@ -78,7 +82,8 @@ export async function POST(request: Request) {
   }
 
   const generator = provider.streamChat({
-    systemPrompt: mode.systemPrompt,
+    // En conversation vocale, on ajoute des consignes pour une réponse courte et lisible à l'oral.
+    systemPrompt: voice === true ? `${mode.systemPrompt}\n${VOICE_INSTRUCTIONS}` : mode.systemPrompt,
     messages: history,
     maxOutputTokens: MAX_OUTPUT_TOKENS,
   });

@@ -122,3 +122,60 @@ body {
     opacity: 1;
   }
 }
+
+/* Le gros bouton rond de la conversation vocale */
+.orb {
+  background: var(--accent);
+  color: var(--on-accent);
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 0 0 var(--accent);
+}
+.orb:active {
+  transform: scale(0.96);
+}
+.orb-listening {
+  animation: orb-listen 1.6s ease-out infinite;
+}
+.orb-thinking {
+  animation: orb-think 1.2s ease-in-out infinite;
+}
+.orb-speaking {
+  animation: orb-speak 0.9s ease-in-out infinite alternate;
+}
+.orb-paused {
+  background: var(--chip);
+  color: var(--foreground);
+  border: 2px solid var(--line);
+}
+@keyframes orb-listen {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 36px transparent;
+  }
+}
+@keyframes orb-think {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+@keyframes orb-speak {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orb-listening,
+  .orb-thinking,
+  .orb-speaking {
+    animation: none;
+  }
+}

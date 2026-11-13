@@ -4,6 +4,7 @@ Un site de chat IA en **Next.js + TypeScript** :
 
 - 🧮 **Logique & Maths** : répond étape par étape, puis vérifie son résultat.
 - 🇲🇦 🇩🇿 **Modes Rigolo** : apprend des mots de darija (mot, prononciation, traduction, exemple) avec humour et bienveillance.
+- 🎙️ **Conversation vocale** : tu parles, l'IA te répond à voix haute, puis t'écoute à nouveau (mains libres).
 - Réponses en **streaming** (le texte s'affiche au fur et à mesure).
 - **Protections** : limite de messages par visiteur, taille maximale des messages, gestion des erreurs.
 - La clé API reste **côté serveur** : elle n'est jamais envoyée au navigateur.
@@ -117,7 +118,37 @@ Pour changer une clé plus tard : Vercel → ton projet → **Settings → Envir
 
 ---
 
-## 4. ➕ Ajouter un nouveau mode
+## 4. 🎙️ Parler à l'IA avec la voix
+
+1. Clique sur le bouton **🎙️** à côté du champ de saisie.
+2. Autorise le micro quand le navigateur te le demande.
+3. Parle normalement, puis fais une petite pause : l'IA répond à voix haute, puis t'écoute à nouveau toute seule.
+4. Touche le **gros bouton rond** pour :
+   - **couper l'IA** pendant qu'elle parle, et reprendre la parole ;
+   - dire **« j'ai fini »** pendant que tu parles ;
+   - **relancer le micro** quand il s'est mis en pause.
+5. **Terminer** (ou la touche Échap) ferme le mode vocal. Toute la conversation reste écrite dans le chat.
+
+**Comment ça marche ?** La reconnaissance de la voix et la lecture à voix haute sont faites par **ton navigateur**. C'est gratuit et ça ne demande aucune clé en plus. En mode vocal, l'IA reçoit des consignes en plus pour répondre court, sans listes ni emojis, et avec les mots étrangers écrits en lettres latines. Ces consignes sont dans `VOICE_INSTRUCTIONS`, en haut de `lib/modes.ts`.
+
+**Navigateurs compatibles :**
+
+| Navigateur | Ça marche ? |
+|---|---|
+| **Chrome**, **Edge** (Windows, Android) | ✅ Oui (le meilleur choix) |
+| **Safari** (iPhone, Mac) | ✅ Oui |
+| **Firefox** | ❌ Non (le bouton 🎙️ n'apparaît pas) |
+
+**À savoir :**
+
+- Le micro ne marche que sur `http://localhost` ou un site en `https://`. Avec Vercel, c'est automatique.
+- La voix utilisée dépend de ton appareil. Sous Windows, Edge propose les voix les plus naturelles (voix « Online »).
+- Avec Chrome, ce que tu dis est transcrit par les serveurs de Google.
+- La voix est française : elle prononce la darija « à la française ». C'est pour ça que l'IA décrit aussi la prononciation avec des mots.
+
+**Aller plus loin :** pour une vraie voix « humaine », avec un accent et une latence très faible, il faut une API vocale en temps réel (par exemple Gemini Live ou ElevenLabs). C'est plus complexe, et souvent payant.
+
+## 5. ➕ Ajouter un nouveau mode
 
 Tout se passe dans **un seul fichier** : `lib/modes.ts`.
 
@@ -153,7 +184,7 @@ Tu glisses naturellement des expressions comme "barcha" (beaucoup), "behi" (bien
 
 ---
 
-## 5. Où trouver quoi ?
+## 6. Où trouver quoi ?
 
 | Fichier | Rôle |
 |---|---|
@@ -164,6 +195,8 @@ Tu glisses naturellement des expressions comme "barcha" (beaucoup), "behi" (bien
 | `lib/ai/gemini.ts`, `lib/ai/claude.ts` | Le code qui parle à chaque IA. |
 | `app/api/chat/route.ts` | La route serveur appelée par le chat. Elle vérifie tout, puis renvoie la réponse en streaming. |
 | `components/Chat.tsx` | L'interface du chat : boutons de mode, messages, champ de saisie. |
+| `components/VoiceConversation.tsx` | L'écran de la conversation vocale (micro et lecture à voix haute). |
+| `lib/voice.ts` | Les outils de la voix : choisir la voix française, nettoyer le texte, découper en phrases. |
 | `app/globals.css` | Les couleurs du site (mode clair et mode sombre). |
 | `.env.example` | Le modèle du fichier de clés. |
 
@@ -179,7 +212,7 @@ Tu glisses naturellement des expressions comme "barcha" (beaucoup), "behi" (bien
 
 ---
 
-## 6. Commandes utiles
+## 7. Commandes utiles
 
 | Commande | Effet |
 |---|---|
@@ -189,7 +222,7 @@ Tu glisses naturellement des expressions comme "barcha" (beaucoup), "behi" (bien
 
 ---
 
-## 7. Aller plus loin (plus tard)
+## 8. Aller plus loin (plus tard)
 
 - **Limite de messages stricte** : la limite actuelle est gardée en mémoire. Sur Vercel, plusieurs serveurs peuvent tourner en même temps, et chacun compte de son côté. Pour une limite exacte, utilise [Upstash Redis](https://upstash.com) (offre gratuite) avec le paquet `@upstash/ratelimit`, et remplace le contenu de `checkRateLimit` dans `lib/rate-limit.ts`.
 - **Plafond de dépenses** : si tu passes à Claude, fixe une limite mensuelle dans la console Anthropic (menu **Limits**).
@@ -205,4 +238,6 @@ Tu glisses naturellement des expressions comme "barcha" (beaucoup), "behi" (bien
 | « Problème de configuration de l'IA » | La clé est fausse ou le nom du modèle n'existe pas. Vérifie `.env.local`. |
 | « Le quota gratuit de l'IA est atteint » | Gemini limite le nombre de requêtes gratuites : attends une minute ou essaie demain. |
 | `npm` n'est pas reconnu | Node.js n'est pas installé : refais l'étape 1.a, puis redémarre PowerShell. |
+| Le bouton 🎙️ n'apparaît pas | Ton navigateur ne gère pas la voix : utilise Chrome ou Edge. |
+| « Autorise l'accès au micro » | Clique sur l'icône 🔒 à gauche de l'adresse du site, puis autorise le micro et recharge la page. |
 | Erreur de script sur PowerShell | Lance d'abord : `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`, puis réponds `O` (ou `Y`). |

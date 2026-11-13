@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { PublicMode } from "@/lib/modes";
+import { isVoiceSupported, unlockSpeech } from "@/lib/voice";
+import VoiceConversation from "./VoiceConversation";
 
 type Message = { role: "user" | "assistant"; content: string };
 
@@ -20,7 +22,19 @@ export default function Chat({ modes, maxChars }: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [voiceOpen, setVoiceOpen] = useState(false);
+  const [voiceAvailable, setVoiceAvailable] = useState(false);
+
   const abortRef = useRef<AbortController | null>(null);
+  const loadingRef = useRef(false);
+  // Copie toujours à jour des conversations (utile pour la voix).
+  const conversationsRef = useRef(conversations);
+  conversationsRef.current = conversations;
+
+  // La voix n'existe que dans le navigateur : on vérifie après l'affichage.
+  useEffect(() => {
+    setVoiceAvailable(isVoiceSupported());
+  }, []);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -35,20 +49,29 @@ export default function Chat({ modes, maxChars }: Props) {
     setConversations((all) => ({ ...all, [id]: update(all[id] ?? []) }));
   }
 
-  async function send(text: string) {
+  /**
+   * Envoie un message à l'IA et affiche la réponse au fur et à mesure.
+   * Utilisé par le champ texte ET par la conversation vocale.
+   * Renvoie la réponse complète, ou null en cas d'erreur / d'interruption.
+   */
+  async function ask(
+    text: string,
+    options: { voice?: boolean; onChunk?: (chunk: string) => void } = {},
+  ): Promise<string | null> {
     const content = text.trim();
-    if (!content || loading) return;
+    if (!content || loadingRef.current) return null;
     if (content.length > maxChars) {
       setError(`Ton message est trop long (maximum ${maxChars} caractères).`);
-      return;
+      return null;
     }
 
     const currentMode = modeId;
-    const history: Message[] = [...messages, { role: "user", content }];
+    const previous = conversationsRef.current[currentMode] ?? [];
+    const history: Message[] = [...previous, { role: "user", content }];
     setMessagesFor(currentMode, () => [...history, { role: "assistant", content: "" }]);
-    setInput("");
     setError(null);
     setLoading(true);
+    loadingRef.current = true;
 
     const controller = new AbortController();
     abortRef.current = controller;
@@ -57,7 +80,7 @@ export default function Chat({ modes, maxChars }: Props) {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ modeId: currentMode, messages: history }),
+        body: JSON.stringify({ modeId: currentMode, messages: history, voice: !!options.voice }),
         signal: controller.signal,
       });
 
@@ -73,13 +96,16 @@ export default function Chat({ modes, maxChars }: Props) {
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-        answer += decoder.decode(value, { stream: true });
+        const chunk = decoder.decode(value, { stream: true });
+        answer += chunk;
+        options.onChunk?.(chunk);
         setMessagesFor(currentMode, (prev) => [
           ...prev.slice(0, -1),
           { role: "assistant", content: answer },
         ]);
       }
       if (!answer.trim()) throw new Error("L'IA n'a rien répondu. Réessaie.");
+      return answer;
     } catch (e) {
       const aborted = e instanceof DOMException && e.name === "AbortError";
       // On retire la bulle vide de l'IA si elle n'a rien écrit.
@@ -94,13 +120,21 @@ export default function Chat({ modes, maxChars }: Props) {
           const last = prev[prev.length - 1];
           return last?.role === "user" ? prev.slice(0, -1) : prev;
         });
-        setInput(content);
+        if (!options.voice) setInput(content);
       }
+      return null;
     } finally {
       setLoading(false);
+      loadingRef.current = false;
       abortRef.current = null;
-      inputRef.current?.focus();
+      if (!options.voice) inputRef.current?.focus();
     }
+  }
+
+  function send(text: string) {
+    if (!text.trim() || loading) return;
+    setInput("");
+    void ask(text);
   }
 
   function stop() {
@@ -219,6 +253,20 @@ export default function Chat({ modes, maxChars }: Props) {
               aria-label="Ton message"
               className="max-h-40 min-h-12 flex-1 resize-none rounded-2xl border border-line bg-background px-4 py-3 text-base outline-none focus:border-accent"
             />
+            {voiceAvailable && !loading && (
+              <button
+                type="button"
+                onClick={() => {
+                  unlockSpeech();
+                  setVoiceOpen(true);
+                }}
+                aria-label="Parler avec l'IA à voix haute"
+                title="Conversation vocale"
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-line text-xl hover:border-accent hover:bg-chip"
+              >
+                <span aria-hidden>🎙️</span>
+              </button>
+            )}
             {loading ? (
               <button
                 type="button"
@@ -243,6 +291,20 @@ export default function Chat({ modes, maxChars }: Props) {
           </p>
         </form>
       </footer>
+
+      {voiceOpen && (
+        <VoiceConversation
+          modeName={mode.name}
+          icon={mode.icon}
+          error={error}
+          ask={(text, onChunk) => ask(text, { voice: true, onChunk })}
+          stopAnswer={stop}
+          onClose={() => {
+            setVoiceOpen(false);
+            inputRef.current?.focus();
+          }}
+        />
+      )}
     </div>
   );
 }
